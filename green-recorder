@@ -302,7 +302,7 @@ def record():
     RecorderFrames = str(frames.get_value_as_int())
 
     if len(filename.get_text()) < 1:
-      RecorderFullPathName = urllib.unquote(folderchooser.get_uri() + '/' + str(datetime.datetime.now()) + '.' + formatchooser.get_active_id())
+      RecorderFullPathName = urllib.unquote(folderchooser.get_uri() + '/' + str(datetime.datetime.now().strftime("%Y%m%d_%H%M%S")) + '.' + formatchooser.get_active_id())
     else:
       RecorderFullPathName = urllib.unquote(folderchooser.get_uri() + '/' + filename.get_text() + '.' + formatchooser.get_active_id())
 
